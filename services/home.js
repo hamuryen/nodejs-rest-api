@@ -6,6 +6,20 @@ const send = require("../helper/result").send;
 * Route: /api/home
 */
 
+/**
+ * @swagger
+ *
+ * /api:
+ *   get:
+ *     description: Home
+ *     tags:
+ *        - home
+ *     produces:
+ *       - application/json *   
+ *     responses:
+ *       200:
+ *         description: Home
+ */
 home.get('/', (req, rep) => {
     result({ version: process.env.VERSION })
         .then((res) => {
@@ -16,6 +30,20 @@ home.get('/', (req, rep) => {
         });
 });
 
+/**
+ * @swagger
+ *
+ * /api/home:
+ *   get:
+ *     description: Home
+ *     tags:
+ *        - home
+ *     produces:
+ *       - application/json *   
+ *     responses:
+ *       200:
+ *         description: Home
+ */
 home.get('/home', (req, rep) => {
     result({ version: process.env.VERSION })
         .then((res) => {
@@ -26,6 +54,20 @@ home.get('/home', (req, rep) => {
         });
 });
 
+/**
+ * @swagger
+ *
+ * /api/version:
+ *   get:
+ *     description: Get version
+ *     tags:
+ *        - home
+ *     produces:
+ *       - application/json *   
+ *     responses:
+ *       200:
+ *         description: Get version
+ */
 home.get('/version', (req, rep) => {
     result({ version: process.env.VERSION })
         .then((res) => {
